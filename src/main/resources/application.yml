@@ -1,0 +1,38 @@
+server:
+  port: 8888
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  devtools:
+    livereload:
+      enabled: true
+      port: 35729
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/allknow?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    port: 6379
+    database: 0
+    host: localhost
+    password:
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      column-underline: true
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+rsa:
+  key:
+    privateKeyFile: D:\RSA\key\private.key
+    publicKeyFile: D:\RSA\key\rsa_public.pub
